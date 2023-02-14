@@ -1,4 +1,5 @@
 from backend import Chatbot
+from PyQt6 import QtGui
 from PyQt6.QtWidgets import  QApplication, QMainWindow, QTextEdit, QLineEdit, QPushButton
 import sys
 import threading
@@ -8,6 +9,8 @@ class ChatbotWindow(QMainWindow):
         super().__init__()
         self.chatbot = Chatbot()
 
+        self.setWindowIcon(QtGui.QIcon("chatgpt-logo.png"))
+        self.setWindowTitle("Chat GPT in Python")
         self.setMinimumSize(700, 500)
         # Add chat area widget
         self.chat_area = QTextEdit(self)
