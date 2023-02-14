@@ -1,10 +1,11 @@
 import openai
-
+import os
+from dotenv import load_dotenv
 
 class Chatbot:
     def __init__(self):
-        reversed_key="B5fSO30G6Da06kQkK6mOJFkblB3Txx0P2UBDrwNoYecdVgQB-ks"
-        openai.api_key=reversed_key[::-1]
+        load_dotenv()
+        openai.api_key=os.getenv("OPENAI_API_KEY")
     
     def get_response(self, user_input):
         try:

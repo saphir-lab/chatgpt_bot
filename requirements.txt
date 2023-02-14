@@ -1,2 +1,3 @@
 openai
 PyQT6
+python-dotenv
